@@ -1,0 +1,23 @@
+@use "../abstract/" as *;
+
+.tns-outer{
+    position: relative;
+    
+.tns-nav{
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 9999;
+    button{
+        margin: 0 .5rem;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        border: none;
+    } 
+    & button.tns-nav-active{
+        background-color: $clr-accent;
+    }
+}  
+}

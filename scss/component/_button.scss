@@ -1,0 +1,21 @@
+@use '../abstract/' as*;
+.btn{
+    background-color: $clr-primary;
+    padding: 1.5rem 2.5rem;
+    margin: 2rem 0;
+    border-radius: 1rem;
+    font-family: "Speedee-Bold";
+    display: flex;
+    @include flex(center,center);
+    line-height:1;
+    transition: .5s ease;
+    text-transform: uppercase;
+
+    &-primary{
+        background: $clr-primary;
+        &:hover{
+            background: darken($color: $clr-primary, $amount: 20);
+        }
+    }
+
+}

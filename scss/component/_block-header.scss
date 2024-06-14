@@ -1,0 +1,19 @@
+@use '../abstract' as*;
+.block-header{
+    h2{
+        font-size: clamp(3rem, 6vw, 10rem);
+        position: relative;
+        z-index: 1;
+        &::before{
+            content: attr(data-text);
+            position: absolute;
+            color: $clr-white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            opacity: 0.04;
+            font-size: clamp(4rem, 7vw, 12rem);
+            z-index: -1;
+        }
+    }
+}

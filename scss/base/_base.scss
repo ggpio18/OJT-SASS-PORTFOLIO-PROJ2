@@ -1,0 +1,54 @@
+// base layout
+@use '../abstract' as *;
+
+@font-face {
+    font-family: "Speedee-regular";
+    src: url('../../fonts/Speedee-Regular.woff');
+}
+
+@font-face {
+    font-family: "Speedee-Bold";
+    src: url('../../fonts/Speedee-Bold.woff');
+}
+
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: "Speedee-regular", arial, sans-serif;
+    color: $clr-white;
+    background-color: $clr-primary;
+    line-height: 1.6;
+    font-size: 1.6rem;
+}
+body.open{
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: $clr-white;
+}
+
+h1 {
+    font-size: clamp(2rem, 6vw ,5rem);
+    margin-bottom: 2.5rem;
+}
+
+ul{
+    list-style: none;
+}
+
+
+p {
+    font-size: clamp(1.4rem, 6vw , 1.6rem);
+    margin-bottom: 1.3rem;
+}
+
+.container {
+    max-width: 98rem;
+    padding: 0 1.6rem;
+    margin: 0 auto;
+}

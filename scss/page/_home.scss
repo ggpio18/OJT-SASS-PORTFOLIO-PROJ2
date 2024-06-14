@@ -1,0 +1,136 @@
+@use "../abstract" as *;
+@use "../base" as *;
+@use "../component" as *;
+@use "../layout" as *;
+
+
+
+.banner{
+    &__wrapper{
+        min-height: 80rem;
+        @include flex(flex-start, center)
+    }
+
+    small{
+        font-size: clamp(6rem, 6vw, 10rem);
+        opacity: 0.6;
+        font-weight: bold;
+    }
+    h1{
+        font-size: clamp(8rem, 6vw, 15rem);
+        line-height: 1;
+        text-transform: uppercase;
+        @include flex(flex-start,flex-end);
+    }
+    span{
+        width: 1.8rem;
+        height: 1.8rem;
+        background-color: $clr-accent;
+        display: block;
+        transform: translate(2rem, -2rem); //moxe dot from X postive down  and Y negat -up position
+    }
+}
+
+.about{
+    &__wrapper{
+        @include unevengrid(1fr);
+        @include mediaQuery{
+            @include unevengrid(.5fr 1fr, 7rem)
+        }
+    }
+    &__image{
+        position: relative;
+        isolation: isolate;
+        &::after{
+            content: '';
+            position: absolute;
+            top: 3rem;
+            left: 3rem;
+            border: .4rem solid $clr-accent;
+            border-color: $clr-accent;
+            background-color: $clr-primary;
+            width: 100%;
+            height: 80%;
+            z-index: -1;
+        }
+    }
+    &__contact{
+        @include grid(2);
+        grid-column-gap: 10rem;
+    }
+}
+
+.skills{
+    &__wrapper{
+        @include grid(1);
+        @include mediaQuery{
+            @include grid(2);
+        }
+    }
+    .skillbar{
+        width: 100%;
+        height: 1.5em;
+        background-color: #363636;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10%;
+            height: 100%;
+            background: $clr-accent;
+        }
+
+    }
+    .skillbar.w-50::before{
+        width: 50%;
+    }
+    .skillbar.w-50::before{
+        width: 95%;
+    }
+    .skillbar.w-50::before{
+        width: 85%;
+    }
+    
+}
+
+.portfolio{
+    &__img{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5rem;
+        img{
+            @include imgCover(200px,200px)
+        }
+    }
+    
+}
+.services{
+    &__wrapper{
+        @include grid(1);
+        @include mediaQuery{
+            @include grid(3);
+        }
+        
+
+        grid-gap: 4rem;
+    }
+    i{
+        color: $clr-accent;
+        font-size: 5rem
+    }
+}
+.contact{
+    &__wrapper{
+        @include grid(1);
+        @include mediaQuery{
+            @include grid(3);
+        }
+        grid-gap: 4rem;
+        margin-top: 5rem;
+
+    }
+}
+
